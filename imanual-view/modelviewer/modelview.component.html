@@ -1,0 +1,75 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<div id="progressBar"><img src="assets/img/loader.gif" alt=""></div> 
+<div class="imanual-app">
+  <div id="view-state"><div id="state-in"><button id="minMaxS" (click)="explodeView();false"><img src="/assets/img/Icon-maximize.png"></button></div><div id="state-init" style="display: none;"><button (click)="loadViewState('initial');false"><img src="/assets/img/turn-right.png"></button></div></div>
+  <div id="device-panel"><div class = "btn-action"></div></div>
+  <div id="tooltip" style="display:none"><button id="tlBtn"></button></div> 
+  <div class="button-wrapper" id="installaion" style="display:none">
+    <div class="button-container"> 
+    <div class="d-flex">
+      <div id="back-animation" class="col-btn action-button" style="display:none"></div>  
+      <div id="replay" class="col-btn action-button" style="display:none"></div> 
+      <div id="reset-zoom" class="col-btn action-button"></div>
+      <div id="pause" class="col-btn action-button" style="display:none"></div>
+      <div id="resume" class="col-btn action-button" style="display:none"></div> 
+    </div>
+    <div id="prerequisites"><div id="pre-sec" style="display:none"></div></div>             
+ </div>
+</div> 
+
+<div class="button-wrapper" id="removal-screen" style="display:none">
+  <div class="button-container"> 
+  <div class="d-flex-2">
+    <div id="removal-main" class="screen-first"></div>
+  </div>
+  <div id="rem-sec-cross" (click)="loadAnimMain();false" class="cross-close"><span class="cross"></span></div>            
+</div>
+</div> 
+
+<div class="button-wrapper" id="install-screen" style="display:none">
+  <div class="button-container"> 
+  <div class="d-flex-2">
+    <div id="install-main" class="screen-first"></div>
+  </div>
+  <div id="install-sec-cross" class="cross-close" (click)="loadAnimMain();false"><span class="cross"></span></div>            
+</div>
+</div> 
+
+<div class="button-wrapper" id="config" style="display:none">
+  <div class="csmt-message">
+  <div class="d-flex">
+      <div id="testing" class="col-btn"><button class="btn-cstm btn-0 action-text"><img src="/assets/img/Icon-testing.png"><span>
+        {{this.cntBtn.testing}}</span></button></div>
+      <div id="collaboration" class="col-btn" style="display:none"><button class="btn-cstm btn-1 action-text" ><img src="/assets/img/Icon-calibration.png"><span>{{this.cntBtn.calibration}}</span></button></div>
+      <div id="inst-remove" class="col-btn"><button class="btn-cstm btn-2 action-text" (click)="installStart();false"><img src="/assets/img/Icon-installation-and-removal.png"><span>{{this.cntBtn.instRemove}}</span></button></div>
+      </div>
+    
+      <div id="caps-section"><div id="cap-sec" style="display:none"></div></div></div> 
+  </div>
+  <div class="button-wrapper" id="video-cali" style="display:none">
+    <div class="d-flex">      
+        <div class="col-btn btn-p">
+          <button class="btn-cstm btn-1 action-text" (click)="open(); false">
+            <img src="/assets/img/Icon-play.png"><span>{{this.cntBtn.videoPlay}}</span></button>
+          </div>    
+        <div class="col-btn btn-cross"> 
+           <button (click)="loadPrevious(); false"><img src="/assets/img/cross-icon.png"></button> 
+        </div> 
+    </div>
+</div>
+
+<div class="button-wrapper" id="video-test" style="display:none">
+    <div class="d-flex">      
+        <div class="col-btn btn-p">
+          <button class="btn-cstm btn-0 action-text" (click)="open(); false">
+            <img src="/assets/img/Icon-play.png"><span>{{this.cntBtn.videoPlay}}</span></button>
+          </div>    
+        <div class="col-btn btn-cross"> 
+           <button (click)="loadPrevious(); false"><img src="/assets/img/cross-icon.png"></button> 
+        </div> 
+    </div>
+</div>
+
+</div>

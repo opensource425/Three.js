@@ -1,0 +1,9 @@
+<ul class="bottom-links" style="padding:10px 0px 0px 0px; list-style: none;">
+ <li *ngFor="let links of cmsLinks" class="footer-links">
+    <div *ngIf="links.status==true">
+       <div *ngFor="let data of links.datum">
+        <a href="#"  (click)="getPage( links._id );false" style="color:gray;font-size: 10px;font-weight: 400;"  *ngIf="data.language==langCode">{{data.title}}</a>
+       </div>
+   </div>
+</li> 
+</ul>

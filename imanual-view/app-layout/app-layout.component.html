@@ -1,0 +1,64 @@
+
+<div class="flex-container" >
+  <div class="header">
+     <div class="main-nav">
+        <button class="fa fa-bars fa-2x open-menu" color="primary" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle()" fxShow="true" fxHide.="true">  
+        </button>
+        
+        <mat-sidenav-container fxFlexFill>
+          <mat-sidenav #sidenav>          
+            <mat-card class="manu-card">             
+              <nav id="menu">
+                <mat-nav-list>
+                  <div mat-list-item><div class="nav-items">
+                   <div class="right-side-box">                                    
+                    <div class="select-box">
+                      <select matNativeControl required (change)="changeLang($event)">
+                        <option value="en" [selected]="currentLang=='en'">English</option>
+                        <option value="de" [selected]="currentLang=='de'">German</option>
+                        <option value="es" [selected]="currentLang=='es'">Spanish</option>
+                        <option value="zh" [selected]="currentLang=='zh'">Chinese</option>
+                      </select>
+                    </div>
+                     <a class="close-bar" (click)="sidenav.toggle()" ><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
+                   </div>
+                   </div>
+                  </div> 
+                </mat-nav-list>
+                <div class="cstm-new-mwnu">                 
+                  <ul class="parent-menu">         
+                    <li *ngFor="let navDatas of nData.data | orderBy:'asc':'order'">
+                    <div *ngFor="let navData of navDatas.data">
+                     <a href="#" (click)="setModelID( navData.title,navDatas._id );false" *ngIf="navData.language==currentLang && navData.title && navDatas.status">{{navData.title.charAt(0).toUpperCase() + navData.title.slice(1)
+                    }}</a>
+                    </div>
+                   </li>
+                  </ul>
+                  <mat-card class="example-card">
+                    <div class="footer-logo"><a href="/"> <h1>Company Logo</h1></a></div>
+                    <mat-card-content class="footr_lik_logo">
+                      <cms-alink></cms-alink>
+                      </mat-card-content>
+                  </mat-card>
+                </div>
+            </nav>
+            </mat-card>           
+            </mat-sidenav>
+            </mat-sidenav-container>
+      </div>
+      <div class="page-title"><h3>{{title}}</h3></div>
+  </div>
+  
+  <div class="wrapper model-div">
+    <div  class="box model-viewer">
+      <imanual-app (getHtmlToken)="getHtmlToken($event)"></imanual-app>  
+    </div>
+   <div class="handler"></div>
+
+   <div  class="box web-content">    
+    <web-manual [viewToken]=viewToken></web-manual>       
+   </div>
+  </div>
+ 
+  </div>
+  
